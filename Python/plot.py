@@ -8,10 +8,11 @@ path = 'D:\Study\Programming\Marine905_git\Python\data.csv'
 data = np.genfromtxt(path, delimiter=',', dtype=None, encoding='UTF-8')
 
 print(data)
+cmap = plt.get_cmap('bwr')
 
-
-plt.matshow(data)
+plt.matshow(data, cmap=cmap)
 plt.colorbar()
+plt.clim(0, 40)
 
 plt.show()
 
