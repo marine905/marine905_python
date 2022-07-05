@@ -1,18 +1,22 @@
 import csv
 import matplotlib.pyplot as plt
 import numpy as np
+ 
 
+path = 'D:\Study\Programming\Marine905_git\Python\twenty.csv'
 
-path = 'D:\Study\Programming\Marine905_git\Python\data.csv'
+data1 = np.genfromtxt(path, delimiter=',', dtype=None, encoding='UTF-8')
 
-data = np.genfromtxt(path, delimiter=',', dtype=None, encoding='UTF-8')
-
-print(data)
+print(data1)
 cmap = plt.get_cmap('bwr')
 
-plt.matshow(data, cmap=cmap)
-plt.colorbar()
-plt.clim(0, 40)
+
+plt.matshow(data1, cmap=cmap)
+plt.clim(0, 0.5)
+plt.colorbar(shrink=0.8, aspect=10)
+
+
+
 
 plt.show()
 
