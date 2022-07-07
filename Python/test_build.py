@@ -21,8 +21,7 @@ for j in data:
             
 print(klist)
         
-        
-        
+              
     
 
 
