@@ -7,3 +7,6 @@ for line in rdr:
     print(line)
 
 f.close()
+
+a =1
+
