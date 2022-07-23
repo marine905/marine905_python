@@ -1,35 +1,34 @@
 import csv
-import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib.pyplot as plt
  
-
-path = 'D:\Study\Programming\Marine905_git\Python\twenty.csv'
-
-data1 = np.genfromtxt(path, delimiter=',', dtype=None, encoding='UTF-8')
-
-print(data1)
-cmap = plt.get_cmap('bwr')
-
-
-plt.matshow(data1, cmap=cmap)
-plt.clim(0, 0.5)
+llist = []
+klist = []
+jlist = []
+ 
+f = open('D:\Study\Programming\Marine905_git\Python\p2pnew.csv', 'r', encoding = 'utf-8')
+data = csv.reader(f)
+ 
+for i in data:
+   llist.append(i)
+ 
+#print(llist)
+ 
+for j in llist:
+   klist.append(list(map(float, j)))
+ 
+#print(klist)
+ 
+jlist = sum(klist, [])
+ 
+#print(jlist)
+print(max(jlist))
+#plt.hist(jlist, range =(min(jlist), max(jlist)), bins=10)
+#cmap = plt.get_cmap('bwr')
+plt.nipy_spectral()
+plt.matshow(klist)
 plt.colorbar(shrink=0.8, aspect=10)
-
-
-
-
+plt.clim(min(jlist), max(jlist))
 plt.show()
-
-
-#with open(path, newline='') as f:
-#    reader = csv.reader(f)
-#    data = list(reader)
-
-#data1 = list(map(int, data))
-#print(data1)
-
-#fig = plt.figure(figsize=(8,6))
-#plt.imshow(data,cmap="inferno")
-
-#plt.show()
-
+ 
+f.close()
